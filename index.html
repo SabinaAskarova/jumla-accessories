@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jumla Accessories — Sonsuz sevgi, bir tək Cümlə. Bakının ən sevilən aksessuarlar brendi.">
+<meta name="description" content="Jumla Accessories — Sonsuz sevgi, bir tək Cümlə. Bakının ən sevilən aksessuarlar brendi. Passage 1901, Ganjlik Mall, Crescent Mall.">
 <title>Jumla — Sonsuz sevgi, bir tək Cümlə ✨</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="main-nav">
   <div class="nav-inner">
     <div class="nav-logo" onclick="goPage('home')">Jumla<span>.</span></div>
@@ -20,12 +21,8 @@
       <li><a onclick="goPage('contact')">Contact</a></li>
     </ul>
     <div class="nav-icons">
-      <button class="nav-icon-btn" onclick="toast('Axtarış...')">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4" stroke-linecap="round"/></svg>
-      </button>
-      <button class="nav-icon-btn" onclick="toast('İstək siyahısı')">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round"/></svg>
-      </button>
+      <button class="nav-icon-btn" onclick="toast('Axtarış...')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4" stroke-linecap="round"/></svg></button>
+      <button class="nav-icon-btn" onclick="toast('İstək siyahısı')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round"/></svg></button>
       <button class="nav-icon-btn" onclick="toast('Səbət — 2 məhsul')">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="cart-badge">2</span>
@@ -46,7 +43,7 @@
   <a onclick="goPage('contact');toggleMob()">Əlaqə</a>
 </div>
 
-<!-- HOME -->
+<!-- ══════ HOME ══════ -->
 <div class="page active" id="pg-home">
   <section style="padding:0">
     <div class="hero">
@@ -74,7 +71,10 @@
       </div>
     </div>
   </section>
+
   <div class="marquee-bar"><div class="mq-track" id="mq"></div></div>
+
+  <!-- CATEGORIES -->
   <section id="cat-sec">
     <div class="container">
       <div class="sec-hd">
@@ -85,6 +85,8 @@
       <div class="cat-grid" id="cat-grid"></div>
     </div>
   </section>
+
+  <!-- NEW ARRIVALS -->
   <section style="background:white">
     <div class="container">
       <div class="sec-hd"><span class="sec-tag">Yeni Gəldi</span><h2 class="sec-title">Yeni <em>Məhsullar</em></h2><div class="sec-div"></div></div>
@@ -92,6 +94,8 @@
       <div style="text-align:center;margin-top:3rem"><button class="btn-outline" onclick="goPage('products')">Hamısına Bax</button></div>
     </div>
   </section>
+
+  <!-- BEST SELLERS -->
   <section>
     <div class="container">
       <div class="sec-hd"><span class="sec-tag">Ən Çox Sevilən</span><h2 class="sec-title">Best <em>Sellers</em></h2><div class="sec-div"></div></div>
@@ -99,6 +103,8 @@
       <div style="text-align:center;margin-top:3rem"><button class="btn-primary" onclick="goPage('products')">Best Sellers-ə Bax</button></div>
     </div>
   </section>
+
+  <!-- WHY US -->
   <section style="background:var(--beige)">
     <div class="container">
       <div class="sec-hd"><span class="sec-tag">Vədimiz</span><h2 class="sec-title">Niyə <em>Jumla?</em></h2><div class="sec-div"></div></div>
@@ -110,6 +116,8 @@
       </div>
     </div>
   </section>
+
+  <!-- NEWSLETTER -->
   <div class="nl-section">
     <div class="container">
       <span class="sec-tag">Bizimlə Qalın</span>
@@ -123,19 +131,17 @@
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ══════ ABOUT ══════ -->
 <div class="page" id="pg-about">
   <div class="about-hero">
     <div class="about-2col">
       <div style="padding-bottom:4rem">
         <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">2018-ci ildən — Bakı, Azərbaycan</div>
         <h1 style="font-family:var(--font-d);font-size:clamp(2.4rem,4vw,4.5rem);font-weight:400;line-height:1.05">Sevgi ilə <em style="font-style:italic;color:var(--gold-dark)">yaradıldı,</em><br>qürurla geyildi.</h1>
-        <p style="margin-top:1.5rem;color:var(--warm-gray);font-size:.9rem;line-height:1.9;font-weight:300;max-width:440px">Jumla, hər qadının özünü unikal hiss etdirəcək parçalarla bəzənməyə layiq olduğuna inancından doğdu. Zamansız dizaynı çağdaş duyğuyla birləşdirən aksessuarlar seçirik.</p>
+        <p style="margin-top:1.5rem;color:var(--warm-gray);font-size:.9rem;line-height:1.9;font-weight:300;max-width:440px">Jumla, hər qadının özünü unikal hiss etdirəcək parçalarla bəzənməyə layiq olduğuna inancından doğdu.</p>
         <button class="btn-primary" style="margin-top:2rem" onclick="goPage('products')">Kolleksiyaları Kəşf Et</button>
       </div>
-      <div class="about-img">
-        <svg width="90" height="90" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="25" r="8"/><path d="M50 10L50 90M10 50L90 50" stroke-dasharray="4 4"/></svg>
-      </div>
+      <div class="about-img"><svg width="90" height="90" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="25" r="8"/><path d="M50 10L50 90M10 50L90 50" stroke-dasharray="4 4"/></svg></div>
     </div>
   </div>
   <section style="background:white">
@@ -145,9 +151,9 @@
         <div>
           <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem">Hekayəmiz</span>
           <h3 style="font-family:var(--font-d);font-size:2rem;font-weight:400;margin-bottom:1rem">Hər Parça Bir Hissdən Başlayır</h3>
-          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300">Jumla 2018-ci ildə Bakıda bir sevgi ilə quruldu: incəsənəti gündəlik həyata gətirmək. Qafqazın zəngin zərgərlik ənənələrindən ilham alan kolleksiyalarımız 121.000-dən çox insanın qəlbini fəth etmişdir.</p>
+          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300">Jumla 2018-ci ildə Bakıda bir sevgi ilə quruldu. Qafqazın zəngin zərgərlik ənənələrindən ilham alan kolleksiyalarımız 121.000-dən çox insanın qəlbini fəth etmişdir.</p>
           <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300">Passage 1901, Ganjlik Mall və Crescent Mall-dakı mağazalarımızda sizi öz dünyamıza dəvət edirik.</p>
-          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;font-weight:300">Bugün Jumla, keyfiyyəti lüks olmadan təqdim edən, müasir qadının ilk seçimi olan bir brend kimi tanınmaqdadır.</p>
+          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;font-weight:300">Bugün Jumla, keyfiyyəti lüks olmadan təqdim edən, müasir qadının ilk seçimi kimi tanınır.</p>
         </div>
       </div>
     </div>
@@ -186,7 +192,7 @@
   </div>
 </div>
 
-<!-- PRODUCTS -->
+<!-- ══════ PRODUCTS ══════ -->
 <div class="page" id="pg-products">
   <div class="shop-hd">
     <div class="container">
@@ -223,7 +229,7 @@
   </section>
 </div>
 
-<!-- DETAIL -->
+<!-- ══════ DETAIL ══════ -->
 <div class="page" id="pg-detail">
   <section style="padding:3rem 0 6rem">
     <div class="container">
@@ -274,7 +280,7 @@
   </section>
 </div>
 
-<!-- CONTACT -->
+<!-- ══════ CONTACT ══════ -->
 <div class="page" id="pg-contact">
   <div class="shop-hd">
     <div class="container">
@@ -301,17 +307,18 @@
               <div class="hrow"><div class="hday">Bayram günləri</div><div>Bağlıdır</div></div>
             </div>
           </div>
+          <!-- SIMPLE MONO SOCIAL BUTTONS -->
           <div class="social-row">
-            <button class="soc-btn soc-instagram" onclick="window.open('https://www.instagram.com/thejumla/','_blank')">
-              <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              @thejumla
+            <button class="soc-btn" onclick="window.open('https://www.instagram.com/thejumla/','_blank')">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
             </button>
-            <button class="soc-btn soc-tiktok" onclick="toast('TikTok: @thejumla')">
-              <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            <button class="soc-btn" onclick="toast('TikTok: @thejumla')">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
               TikTok
             </button>
-            <button class="soc-btn soc-whatsapp" onclick="toast('WhatsApp ilə əlaqə')">
-              <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <button class="soc-btn" onclick="toast('WhatsApp ilə əlaqə')">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               WhatsApp
             </button>
           </div>
@@ -341,21 +348,41 @@
   </section>
 </div>
 
-<!-- FOOTER -->
+<!-- ══════ FOOTER — 3 cols, NO newsletter col, simple social icons ══════ -->
 <footer>
   <div class="container">
     <div class="footer-grid">
+      <!-- Brand col WITH inline subscribe -->
       <div>
         <div class="f-logo">Jumla<span>.</span></div>
         <div class="f-slogan">Sonsuz sevgi, bir tək Cümlə ✨</div>
         <p class="f-desc">Bakı'dan dünyaya uzanan aksessuarlar brendi. Passage 1901, Ganjlik Mall, Crescent Mall.</p>
+        <!-- Simple mono social icon squares -->
         <div class="f-soc">
-          <button class="f-soc-btn f-soc-ig" onclick="window.open('https://www.instagram.com/thejumla/','_blank')" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></button>
-          <button class="f-soc-btn f-soc-tt" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></button>
-          <button class="f-soc-btn f-soc-wa" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></button>
-          <button class="f-soc-btn f-soc-fb" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
+          <button class="f-soc-btn" onclick="window.open('https://www.instagram.com/thejumla/','_blank')" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </button>
+          <button class="f-soc-btn" title="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </button>
+          <button class="f-soc-btn" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </button>
+          <button class="f-soc-btn" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </button>
+        </div>
+        <!-- Single newsletter block inside brand col -->
+        <div class="f-nl-inline">
+          <div class="f-col-title">Xəbər Bülteni</div>
+          <div class="f-nl-row">
+            <input class="f-nl-input" type="email" placeholder="E-poçt ünvanınız">
+            <button class="f-nl-btn" onclick="toast('Abunəlik uğurludur ✓')">Abunə Ol</button>
+          </div>
         </div>
       </div>
+
+      <!-- Quick links -->
       <div>
         <div class="f-col-title">Keçidlər</div>
         <ul class="f-links">
@@ -364,7 +391,18 @@
           <li><a onclick="goPage('products')">Bütün Məhsullar</a></li>
           <li><a onclick="goPage('contact')">Əlaqə</a></li>
         </ul>
+        <div style="margin-top:2rem">
+          <div class="f-col-title">Müştəri Xidməti</div>
+          <ul class="f-links">
+            <li><a onclick="toast('FAQ')">Tez-tez Soruşulanlar</a></li>
+            <li><a onclick="toast('Çatdırılma')">Çatdırılma Məlumatı</a></li>
+            <li><a onclick="toast('İade')">İade Siyasəti</a></li>
+            <li><a onclick="toast('Ölçü')">Ölçü Bələdçisi</a></li>
+          </ul>
+        </div>
       </div>
+
+      <!-- Collections -->
       <div>
         <div class="f-col-title">Kolleksiyalar</div>
         <ul class="f-links">
@@ -377,24 +415,8 @@
           <li><a onclick="goPage('products')">Eynəklər</a></li>
         </ul>
       </div>
-      <div>
-        <div class="f-col-title">Xəbər Bülteni</div>
-        <p class="f-nl-desc">Yeni kolleksiyalar və eksklüziv təkliflərdən xəbərdar olun.</p>
-        <div class="f-nl-form">
-          <input class="f-nl-input" type="email" placeholder="E-poçt ünvanınız">
-          <button class="f-nl-btn" onclick="toast('Abunəlik uğurludur ✓')">Abunə Ol</button>
-        </div>
-        <div style="margin-top:1.8rem">
-          <div class="f-col-title">Müştəri Xidməti</div>
-          <ul class="f-links">
-            <li><a onclick="toast('FAQ')">Tez-tez Soruşulanlar</a></li>
-            <li><a onclick="toast('Çatdırılma')">Çatdırılma Məlumatı</a></li>
-            <li><a onclick="toast('İade')">İade Siyasəti</a></li>
-            <li><a onclick="toast('Ölçü')">Ölçü Bələdçisi</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
+
     <div class="f-bottom">
       <div class="f-copy">© 2025 Jumla Accessories. Bütün hüquqlar qorunur. Bakı, Azərbaycan.</div>
       <div class="pay-row"><span class="pay-b">Visa</span><span class="pay-b">Mastercard</span><span class="pay-b">PayPal</span><span class="pay-b">Apple Pay</span></div>
