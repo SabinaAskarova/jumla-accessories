@@ -186,27 +186,28 @@ function initMarquee() {
 }
 
 // ── CATEGORIES ────────────────────────────────────────────────────────────
-// Layout (4-col grid):
-//   Row 1: Earrings | Necklaces | Rings     | Bracelets   (each 1 col)
-//   Row 2: Watches  | Bags      | Sunglasses (spans 2 cols, same 3:4 ratio)
+// Layout:
+//   Row 1: Earrings | Necklaces | Rings      (3-col)
+//   Row 2: Bracelets | Watches  | Bags        (3-col)
+//   Feature: Sunglasses — full-width landscape banner
 function initCategories() {
-  var cats = [
-    {n:'Sırğalar',     c:'84',  key:'earrings',   wide:false},
-    {n:'Boyunbağılar', c:'67',  key:'necklaces',  wide:false},
-    {n:'Üzüklər',      c:'112', key:'rings',      wide:false},
-    {n:'Qolbaqlar',    c:'59',  key:'bracelets',  wide:false},
-    {n:'Saatlar',      c:'43',  key:'watches',    wide:false},
-    {n:'Çantalar',     c:'38',  key:'bags',       wide:false},
-    {n:'Eynəklər',     c:'29',  key:'sunglasses', wide:true}
-  ];
   var g = document.getElementById('cat-grid');
   if (!g) return;
-  var h = '';
-  for (var i = 0; i < cats.length; i++) {
-    var ct = cats[i];
-    var cls = 'cat-card' + (ct.wide ? ' wide' : '');
-    h += '<div class="' + cls + '" onclick="goPage(\'products\')">' +
-      '<div class="cat-bg" style="background-image:url(\'' + (CAT_IMGS[ct.key] || '') + '\');background-size:cover;background-position:center;height:100%"></div>' +
+
+  var row1 = [
+    {n:'Sırğalar',     c:'84',  key:'earrings'},
+    {n:'Boyunbağılar', c:'67',  key:'necklaces'},
+    {n:'Üzüklər',      c:'112', key:'rings'}
+  ];
+  var row2 = [
+    {n:'Qolbaqlar', c:'59', key:'bracelets'},
+    {n:'Saatlar',   c:'43', key:'watches'},
+    {n:'Çantalar',  c:'38', key:'bags'}
+  ];
+
+  function regularCard(ct) {
+    return '<div class="cat-card" onclick="goPage(\'products\')">' +
+      '<div class="cat-bg" style="background-image:url(\'' + (CAT_IMGS[ct.key]||'') + '\');background-size:cover;background-position:center;height:100%"></div>' +
       '<div class="cat-ov"></div>' +
       '<div class="cat-body">' +
         '<div class="cat-lbl">Kolleksiya</div>' +
@@ -215,7 +216,31 @@ function initCategories() {
       '</div>' +
     '</div>';
   }
-  g.innerHTML = h;
+
+  var r1 = '<div class="cat-row">' + row1.map(regularCard).join('') + '</div>';
+  var r2 = '<div class="cat-row">' + row2.map(regularCard).join('') + '</div>';
+
+  // Feature card for Sunglasses
+  var feat =
+    '<div class="cat-feature" onclick="goPage(\'products\')">' +
+      '<div class="cat-feature-inner">' +
+        '<div class="cat-feature-visual">' +
+          '<div class="cat-bg" style="background-image:url(\'' + (CAT_IMGS.sunglasses||'') + '\');background-size:cover;background-position:center;position:absolute;inset:0"></div>' +
+          '<div class="cat-ov"></div>' +
+        '</div>' +
+        '<div class="cat-feature-info">' +
+          '<div class="cat-feature-tag">Kolleksiya · 29 parça</div>' +
+          '<div class="cat-feature-name">Eynəklər</div>' +
+          '<div class="cat-feature-sub">Premium çərçivələr — UV qorunma, müasir formalar</div>' +
+          '<button class="cat-feature-btn" onclick="event.stopPropagation();goPage(\'products\')">' +
+            'Kolleksiyaya Bax' +
+            '<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  g.innerHTML = '<div class="cat-wrapper">' + r1 + r2 + feat + '</div>';
 }
 
 // ── PRODUCT CARD ──────────────────────────────────────────────────────────
