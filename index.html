@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="az" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jumla Accessories — Sonsuz sevgi, bir tək Cümlə. Bakının ən sevilən aksessuarlar brendi. Passage 1901, Ganjlik Mall, Crescent Mall.">
-<title>Jumla — Sonsuz sevgi, bir tək Cümlə ✨</title>
+<meta name="description" content="Jumla Accessories — Sonsuz sevgi, bir tək Cümlə. Bakının ən sevilən aksessuarlar brendi.">
+<title>Jumla — Timeless Elegance</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/styles/main.css">
 </head>
@@ -15,15 +15,27 @@
   <div class="nav-inner">
     <div class="nav-logo" onclick="goPage('home')">Jumla<span>.</span></div>
     <ul class="nav-links">
-      <li><a onclick="goPage('home')">Home</a></li>
-      <li><a onclick="goPage('products')">Shop</a></li>
-      <li><a onclick="goPage('about')">About</a></li>
-      <li><a onclick="goPage('contact')">Contact</a></li>
+      <li><a onclick="goPage('home')"    data-i18n="nav_home"></a></li>
+      <li><a onclick="goPage('products')" data-i18n="nav_shop"></a></li>
+      <li><a onclick="goPage('about')"   data-i18n="nav_about"></a></li>
+      <li><a onclick="goPage('contact')" data-i18n="nav_contact"></a></li>
     </ul>
     <div class="nav-icons">
-      <button class="nav-icon-btn" onclick="toast('Axtarış...')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4" stroke-linecap="round"/></svg></button>
-      <button class="nav-icon-btn" onclick="toast('İstək siyahısı')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round"/></svg></button>
-      <button class="nav-icon-btn" onclick="toast('Səbət — 2 məhsul')">
+      <!-- Language switcher -->
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('az')">AZ</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      </div>
+      <button class="nav-icon-btn" onclick="toast(T('search'))">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-icon-btn" onclick="toast(T('wishlist'))">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-icon-btn" onclick="toast(T('cart'))">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="cart-badge">2</span>
       </button>
@@ -33,27 +45,30 @@
 </nav>
 
 <div class="mob-nav" id="mob-nav">
-  <a onclick="goPage('home');toggleMob()">Ana Səhifə</a>
-  <a onclick="goPage('products');toggleMob()">Bütün Məhsullar</a>
-  <a onclick="goPage('products');toggleMob()">Sırğalar</a>
-  <a onclick="goPage('products');toggleMob()">Boyunbağılar</a>
-  <a onclick="goPage('products');toggleMob()">Üzüklər</a>
-  <a onclick="goPage('products');toggleMob()">Saatlar</a>
-  <a onclick="goPage('about');toggleMob()">Haqqımızda</a>
-  <a onclick="goPage('contact');toggleMob()">Əlaqə</a>
+  <a onclick="goPage('home');toggleMob()"    data-i18n="nav_home"></a>
+  <a onclick="goPage('products');toggleMob()" data-i18n="nav_shop"></a>
+  <a onclick="goPage('about');toggleMob()"   data-i18n="nav_about"></a>
+  <a onclick="goPage('contact');toggleMob()" data-i18n="nav_contact"></a>
+  <div class="mob-lang">
+    <button class="lang-btn active" onclick="setLang('az')">AZ</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
 </div>
 
-<!-- ══════ HOME ══════ -->
+<!-- ══ HOME ══ -->
 <div class="page active" id="pg-home">
   <section style="padding:0">
     <div class="hero">
       <div class="hero-left">
-        <div class="hero-eyebrow">Yeni Kolleksiya 2025</div>
-        <h1 class="hero-title">Sonsuz sevgi,<br>bir tək <em>Cümlə.</em></h1>
-        <p class="hero-sub">Hər detal üçün seçilmiş zərgərlik və aksessuarlar. Stilinizi tamamlayan, hisslərinizi ifadə edən parçalar.</p>
+        <div class="hero-eyebrow" data-i18n="hero_tag"></div>
+        <h1 class="hero-title" data-i18n="hero_title"></h1>
+        <p class="hero-sub" data-i18n="hero_sub"></p>
         <div class="hero-ctas">
-          <button class="btn-primary" onclick="goPage('products')">Kolleksiyaya Bax <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round"/></svg></button>
-          <button class="btn-outline" onclick="scrollToId('cat-sec')">Kateqoriyalar</button>
+          <button class="btn-primary" onclick="goPage('products')" data-i18n="hero_btn1"></button>
+          <button class="btn-outline"  onclick="scrollToId('cat-sec')" data-i18n="hero_btn2"></button>
         </div>
       </div>
       <div class="hero-right">
@@ -66,7 +81,7 @@
         </svg>
         <div class="hero-badge">
           <span class="hero-badge-num">500+</span>
-          <span class="hero-badge-txt">Unikal Parça</span>
+          <span class="hero-badge-txt" data-i18n="hero_badge"></span>
         </div>
       </div>
     </div>
@@ -74,74 +89,99 @@
 
   <div class="marquee-bar"><div class="mq-track" id="mq"></div></div>
 
-  <!-- CATEGORIES -->
   <section id="cat-sec">
     <div class="container">
       <div class="sec-hd">
-        <span class="sec-tag">Kəşf Et</span>
-        <h2 class="sec-title">Kateqoriyaya görə <em>Alış-veriş</em></h2>
+        <span class="sec-tag" data-i18n="cat_tag"></span>
+        <h2 class="sec-title" data-i18n="cat_title"></h2>
         <div class="sec-div"></div>
       </div>
-      <div class="cat-grid" id="cat-grid"></div>
+      <div id="cat-grid"></div>
     </div>
   </section>
 
-  <!-- NEW ARRIVALS -->
   <section style="background:white">
     <div class="container">
-      <div class="sec-hd"><span class="sec-tag">Yeni Gəldi</span><h2 class="sec-title">Yeni <em>Məhsullar</em></h2><div class="sec-div"></div></div>
+      <div class="sec-hd">
+        <span class="sec-tag" data-i18n="new_tag"></span>
+        <h2 class="sec-title" data-i18n="new_title"></h2>
+        <div class="sec-div"></div>
+      </div>
       <div class="prod-grid" id="new-grid"></div>
-      <div style="text-align:center;margin-top:3rem"><button class="btn-outline" onclick="goPage('products')">Hamısına Bax</button></div>
-    </div>
-  </section>
-
-  <!-- BEST SELLERS -->
-  <section>
-    <div class="container">
-      <div class="sec-hd"><span class="sec-tag">Ən Çox Sevilən</span><h2 class="sec-title">Best <em>Sellers</em></h2><div class="sec-div"></div></div>
-      <div class="prod-grid" id="bs-grid"></div>
-      <div style="text-align:center;margin-top:3rem"><button class="btn-primary" onclick="goPage('products')">Best Sellers-ə Bax</button></div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section style="background:var(--beige)">
-    <div class="container">
-      <div class="sec-hd"><span class="sec-tag">Vədimiz</span><h2 class="sec-title">Niyə <em>Jumla?</em></h2><div class="sec-div"></div></div>
-      <div class="why-grid">
-        <div class="why-card"><div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="why-title">Premium Keyfiyyət</div><p class="why-text">Hər parça ən yüksək keyfiyyətli materiallardan hazırlanmış, uzunömürlü gözəllik üçün seçilmişdir.</p></div>
-        <div class="why-card"><div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="why-title">Müasir Dizayn</div><p class="why-text">Kolleksiyalarımız çağdaş estetika ilə klassik zərafəti birləşdirir, müasir qadın üçün yaradılmışdır.</p></div>
-        <div class="why-card"><div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="why-title">Təhlükəsiz Alış</div><p class="why-text">Əminliklə alış-veriş edin. Bütün əməliyyatlar bank səviyyəli şifrələmə ilə qorunur.</p></div>
-        <div class="why-card"><div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round"/><rect x="1" y="3" width="22" height="18" rx="2" opacity=".25"/></svg></div><div class="why-title">Sürətli Çatdırılma</div><p class="why-text">Sifarişiniz gözəl paketlənmiş şəkildə çatdırılır. Passage 1901, Ganjlik Mall, Crescent Mall.</p></div>
+      <div style="text-align:center;margin-top:3rem">
+        <button class="btn-outline" onclick="goPage('products')" data-i18n="view_all"></button>
       </div>
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
+  <section>
+    <div class="container">
+      <div class="sec-hd">
+        <span class="sec-tag" data-i18n="bs_tag"></span>
+        <h2 class="sec-title" data-i18n="bs_title"></h2>
+        <div class="sec-div"></div>
+      </div>
+      <div class="prod-grid" id="bs-grid"></div>
+      <div style="text-align:center;margin-top:3rem">
+        <button class="btn-primary" onclick="goPage('products')" data-i18n="bs_btn"></button>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--beige)">
+    <div class="container">
+      <div class="sec-hd">
+        <span class="sec-tag" data-i18n="why_tag"></span>
+        <h2 class="sec-title" data-i18n="why_title"></h2>
+        <div class="sec-div"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="why-title" data-i18n="why1_title"></div><p class="why-text" data-i18n="why1_text"></p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="why-title" data-i18n="why2_title"></div><p class="why-text" data-i18n="why2_text"></p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="why-title" data-i18n="why3_title"></div><p class="why-text" data-i18n="why3_text"></p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round"/><rect x="1" y="3" width="22" height="18" rx="2" opacity=".25"/></svg></div>
+          <div class="why-title" data-i18n="why4_title"></div><p class="why-text" data-i18n="why4_text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="nl-section">
     <div class="container">
-      <span class="sec-tag">Bizimlə Qalın</span>
-      <h2 class="sec-title">Yeni Kolleksiyalardan <em>Xəbərdar Olun</em></h2>
-      <p>Yeni gələnlər, eksklüziv təkliflər və stil ilhamı üçün abunə olun.</p>
+      <span class="sec-tag" data-i18n="nl_tag"></span>
+      <h2 class="sec-title" data-i18n="nl_title"></h2>
+      <p data-i18n="nl_sub"></p>
       <form class="nl-form" onsubmit="nlSub(event)">
-        <input class="nl-input" type="email" placeholder="E-poçt ünvanınız" required>
-        <button type="submit" class="nl-btn">Abunə Ol</button>
+        <input class="nl-input" type="email" id="nl-placeholder" required>
+        <button type="submit" class="nl-btn" data-i18n="nl_btn"></button>
       </form>
     </div>
   </div>
-</div>
+</div><!-- /home -->
 
-<!-- ══════ ABOUT ══════ -->
+<!-- ══ ABOUT ══ -->
 <div class="page" id="pg-about">
   <div class="about-hero">
     <div class="about-2col">
       <div style="padding-bottom:4rem">
-        <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">2018-ci ildən — Bakı, Azərbaycan</div>
-        <h1 style="font-family:var(--font-d);font-size:clamp(2.4rem,4vw,4.5rem);font-weight:400;line-height:1.05">Sevgi ilə <em style="font-style:italic;color:var(--gold-dark)">yaradıldı,</em><br>qürurla geyildi.</h1>
-        <p style="margin-top:1.5rem;color:var(--warm-gray);font-size:.9rem;line-height:1.9;font-weight:300;max-width:440px">Jumla, hər qadının özünü unikal hiss etdirəcək parçalarla bəzənməyə layiq olduğuna inancından doğdu.</p>
-        <button class="btn-primary" style="margin-top:2rem" onclick="goPage('products')">Kolleksiyaları Kəşf Et</button>
+        <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem" data-i18n="about_since"></div>
+        <h1 style="font-family:var(--font-d);font-size:clamp(2.4rem,4vw,4.5rem);font-weight:400;line-height:1.05" data-i18n="about_headline"></h1>
+        <p style="margin-top:1.5rem;color:var(--warm-gray);font-size:.9rem;line-height:1.9;font-weight:300;max-width:440px" data-i18n="about_intro"></p>
+        <button class="btn-primary" style="margin-top:2rem" onclick="goPage('products')" data-i18n="about_btn"></button>
       </div>
-      <div class="about-img"><svg width="90" height="90" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="25" r="8"/><path d="M50 10L50 90M10 50L90 50" stroke-dasharray="4 4"/></svg></div>
+      <div class="about-img">
+        <svg width="90" height="90" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="25" r="8"/><path d="M50 10L50 90M10 50L90 50" stroke-dasharray="4 4"/></svg>
+      </div>
     </div>
   </div>
   <section style="background:white">
@@ -149,76 +189,64 @@
       <div class="about-story">
         <div class="about-sq"><svg width="80" height="80" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30"/><path d="M20 40Q40 20 60 40Q40 60 20 40"/><circle cx="40" cy="40" r="8" fill="rgba(201,169,110,0.3)"/></svg></div>
         <div>
-          <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem">Hekayəmiz</span>
-          <h3 style="font-family:var(--font-d);font-size:2rem;font-weight:400;margin-bottom:1rem">Hər Parça Bir Hissdən Başlayır</h3>
-          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300">Jumla 2018-ci ildə Bakıda bir sevgi ilə quruldu. Qafqazın zəngin zərgərlik ənənələrindən ilham alan kolleksiyalarımız 121.000-dən çox insanın qəlbini fəth etmişdir.</p>
-          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300">Passage 1901, Ganjlik Mall və Crescent Mall-dakı mağazalarımızda sizi öz dünyamıza dəvət edirik.</p>
-          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;font-weight:300">Bugün Jumla, keyfiyyəti lüks olmadan təqdim edən, müasir qadının ilk seçimi kimi tanınır.</p>
+          <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem" data-i18n="story_tag"></span>
+          <h3 style="font-family:var(--font-d);font-size:2rem;font-weight:400;margin-bottom:1rem" data-i18n="story_title"></h3>
+          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;margin-bottom:1rem;font-weight:300" data-i18n="story_p1"></p>
+          <p style="color:var(--warm-gray);font-size:.88rem;line-height:1.9;font-weight:300" data-i18n="story_p2"></p>
         </div>
       </div>
     </div>
   </section>
   <section style="background:var(--beige)">
     <div class="container">
-      <span class="sec-tag">Dəyərlərimiz</span>
-      <h2 class="sec-title" style="text-align:left">Missiya <em>&amp; Vizyon</em></h2>
+      <span class="sec-tag" data-i18n="vals_tag"></span>
+      <h2 class="sec-title" style="text-align:left" data-i18n="vals_title"></h2>
       <div class="vals-grid">
-        <div class="val-item"><h4>Missiyamız</h4><p>Hər qadına öz fərdiliyini ifadə edə biləcəyi, yüksək keyfiyyətli aksessuarlar təqdim etmək.</p></div>
-        <div class="val-item"><h4>Vizyonumuz</h4><p>Azərbaycandan dünyaya, lüks hissi ilə qiymət arasındakı uçurumu aradan qaldıran ən etibarlı aksessuarlar brendi olmaq.</p></div>
-        <div class="val-item"><h4>Keyfiyyət Öhdəliyi</h4><p>Hər parça Jumla adını daşımadan əvvəl ciddi keyfiyyət yoxlamasından keçir — davamlılıq, dəri uyğunluğu və estetika baxımından.</p></div>
+        <div class="val-item"><h4 data-i18n="val1_h"></h4><p data-i18n="val1_p"></p></div>
+        <div class="val-item"><h4 data-i18n="val2_h"></h4><p data-i18n="val2_p"></p></div>
+        <div class="val-item"><h4 data-i18n="val3_h"></h4><p data-i18n="val3_p"></p></div>
       </div>
     </div>
   </section>
   <section style="background:white">
     <div class="container">
       <div class="stat-grid">
-        <div><div class="stat-num">500+</div><div class="stat-lbl">Unikal Parça</div></div>
-        <div><div class="stat-num">121K</div><div class="stat-lbl">Instagram İzləyici</div></div>
-        <div><div class="stat-num">2018</div><div class="stat-lbl">Quruluş İli</div></div>
-        <div><div class="stat-num">3</div><div class="stat-lbl">Mağaza Lokasiyası</div></div>
+        <div><div class="stat-num">500+</div><div class="stat-lbl" data-i18n="stat1"></div></div>
+        <div><div class="stat-num">121K</div><div class="stat-lbl" data-i18n="stat2"></div></div>
+        <div><div class="stat-num">2018</div><div class="stat-lbl" data-i18n="stat3"></div></div>
+        <div><div class="stat-num">3</div><div class="stat-lbl" data-i18n="stat4"></div></div>
       </div>
     </div>
   </section>
-  <div class="nl-section">
-    <div class="container">
-      <span class="sec-tag">Hekayəmizin Bir Parçası Olun</span>
-      <h2 class="sec-title">Eksklüziv <em>Girişə Abunə Olun</em></h2>
-      <p>Yeni kolleksiyalar, stil bələdçiləri və üzv xüsusi təklifləri.</p>
-      <form class="nl-form" onsubmit="nlSub(event)">
-        <input class="nl-input" type="email" placeholder="E-poçt ünvanınız" required>
-        <button type="submit" class="nl-btn">İndi Qoşulun</button>
-      </form>
-    </div>
-  </div>
-</div>
+</div><!-- /about -->
 
-<!-- ══════ PRODUCTS ══════ -->
+<!-- ══ PRODUCTS ══ -->
 <div class="page" id="pg-products">
   <div class="shop-hd">
     <div class="container">
-      <span class="sec-tag">Mağaza</span>
-      <h1 class="sec-title">Kolleksiyamız</h1>
-      <p style="margin-top:1rem;color:var(--warm-gray);font-size:.85rem">500-dən çox seçilmiş parça — hər məqam üçün</p>
+      <span class="sec-tag" data-i18n="shop_tag"></span>
+      <h1 class="sec-title" data-i18n="shop_title"></h1>
+      <p style="margin-top:1rem;color:var(--warm-gray);font-size:.85rem" data-i18n="shop_sub"></p>
     </div>
   </div>
   <section style="padding:3rem 0">
     <div class="container">
       <div class="shop-layout">
         <div class="filters">
-          <h3 style="font-family:var(--font-d);font-size:1.3rem;margin-bottom:1.5rem">Filtrlər</h3>
+          <h3 style="font-family:var(--font-d);font-size:1.2rem;margin-bottom:1.2rem" data-i18n="filters"></h3>
           <div id="filter-content"></div>
-          <button class="btn-primary" style="width:100%;justify-content:center;margin-top:.5rem" onclick="toast('Filtrlər tətbiq edildi')">Tətbiq Et</button>
-          <button style="width:100%;background:transparent;border:none;color:var(--warm-gray);font-size:.78rem;margin-top:.8rem;cursor:pointer;text-decoration:underline" onclick="toast('Filtrlər silindi')">Hamısını Sil</button>
+          <button class="btn-primary" style="width:100%;justify-content:center;margin-top:.5rem" onclick="toast(T('filters_applied'))" data-i18n="apply_filters"></button>
+          <button style="width:100%;background:transparent;border:none;color:var(--warm-gray);font-size:.78rem;margin-top:.6rem;cursor:pointer;text-decoration:underline" onclick="toast(T('filters_cleared'))" data-i18n="clear_filters"></button>
         </div>
         <div>
           <div class="shop-topbar">
-            <span class="shop-count">500 məhsuldan 12-si göstərilir</span>
+            <span class="shop-count" data-i18n="showing"></span>
             <div style="display:flex;align-items:center;gap:1rem">
               <div class="view-tog">
                 <button class="vbtn on"><svg fill="currentColor" viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
                 <button class="vbtn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/></svg></button>
               </div>
-              <select class="shop-sort"><option>Sıralama: Seçilmiş</option><option>Qiymət: Azdan Çoxa</option><option>Qiymət: Çoxdan Aza</option><option>Ən Yenilər</option></select>
+              <select class="shop-sort" id="shop-sort-sel"></select>
             </div>
           </div>
           <div class="prod-grid" id="shop-grid"></div>
@@ -227,178 +255,155 @@
       </div>
     </div>
   </section>
-</div>
+</div><!-- /products -->
 
-<!-- ══════ DETAIL ══════ -->
+<!-- ══ DETAIL ══ -->
 <div class="page" id="pg-detail">
   <section style="padding:3rem 0 6rem">
     <div class="container">
-      <div class="breadcrumb">Ana Səhifə / Mağaza / Sırğa / <span>Golden Orbit Hoops</span></div>
+      <div class="breadcrumb" id="det-breadcrumb"></div>
       <div class="det-grid">
         <div class="det-gallery">
           <div class="det-thumbs" id="det-thumbs"></div>
           <div class="det-main" id="det-main"></div>
         </div>
         <div>
-          <div class="det-col">Celestial Kolleksiya · 2025</div>
-          <h1 class="det-title">Golden Orbit<br>Sırğalar</h1>
+          <div class="det-col" data-i18n="det_col"></div>
+          <h1 class="det-title" data-i18n="det_name"></h1>
           <div class="det-price">₼218.00</div>
           <div class="hr"></div>
-          <div class="det-lbl">Material</div>
+          <div class="det-lbl" data-i18n="det_material"></div>
           <div class="chips" id="det-chips"></div>
-          <div class="det-lbl">Miqdar</div>
+          <div class="det-lbl" data-i18n="det_qty"></div>
           <div class="qty-row">
             <button class="qty-btn" onclick="adjQty(-1)">−</button>
             <span id="qty-v" style="font-size:.95rem;min-width:28px;text-align:center">1</span>
             <button class="qty-btn" onclick="adjQty(1)">+</button>
           </div>
           <div class="det-ctas">
-            <button class="btn-primary" style="flex:1;justify-content:center;padding:1rem" onclick="toast('Səbətə əlavə edildi ✓')">Səbətə Əlavə Et</button>
-            <button class="wish-lg" onclick="toast('İstək siyahısına əlavə edildi ♡')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <button class="btn-primary" style="flex:1;justify-content:center;padding:1rem" onclick="toast(T('added_cart'))" data-i18n="add_cart"></button>
+            <button class="wish-lg" onclick="toast(T('added_wish'))">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
           </div>
           <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap">
-            <span style="font-size:.75rem;color:var(--warm-gray)">✓ 150₼ üzəri pulsuz çatdırılma</span>
-            <span style="font-size:.75rem;color:var(--warm-gray)">↩ 30 gün iade</span>
+            <span style="font-size:.75rem;color:var(--warm-gray)" data-i18n="free_ship"></span>
+            <span style="font-size:.75rem;color:var(--warm-gray)" data-i18n="returns"></span>
           </div>
           <div class="hr"></div>
           <div class="specs">
-            <div class="det-lbl" style="margin-bottom:1rem">Spesifikasiyalar</div>
-            <div class="spec-row"><span class="sk">Diametr</span><span class="sv">40mm</span></div>
-            <div class="spec-row"><span class="sk">Metal</span><span class="sv">18K Qızıl Vermeil</span></div>
-            <div class="spec-row"><span class="sk">Bənd</span><span class="sv">Push-back</span></div>
-            <div class="spec-row"><span class="sk">Çəki</span><span class="sv">4.2q (cüt)</span></div>
-            <div class="spec-row"><span class="sk">Finişi</span><span class="sv">Yüksək parlaqlıq</span></div>
-            <div class="spec-row"><span class="sk">Dəri Uyğunluğu</span><span class="sv">Bütün dəri növləri</span></div>
+            <div class="det-lbl" style="margin-bottom:1rem" data-i18n="specs"></div>
+            <div class="spec-row"><span class="sk" data-i18n="spec_diam"></span><span class="sv">40mm</span></div>
+            <div class="spec-row"><span class="sk" data-i18n="spec_metal"></span><span class="sv">18K Gold Vermeil</span></div>
+            <div class="spec-row"><span class="sk" data-i18n="spec_close"></span><span class="sv">Push-back</span></div>
+            <div class="spec-row"><span class="sk" data-i18n="spec_weight"></span><span class="sv">4.2g</span></div>
+            <div class="spec-row"><span class="sk" data-i18n="spec_finish"></span><span class="sv" data-i18n="spec_finish_val"></span></div>
           </div>
         </div>
       </div>
       <div style="margin-top:5rem">
-        <div class="sec-hd"><span class="sec-tag">Bəlkə Bəyənərsiniz</span><h2 class="sec-title">Əlaqəli <em>Parçalar</em></h2><div class="sec-div"></div></div>
+        <div class="sec-hd">
+          <span class="sec-tag" data-i18n="related_tag"></span>
+          <h2 class="sec-title" data-i18n="related_title"></h2>
+          <div class="sec-div"></div>
+        </div>
         <div class="prod-grid" id="rel-grid"></div>
       </div>
     </div>
   </section>
-</div>
+</div><!-- /detail -->
 
-<!-- ══════ CONTACT ══════ -->
+<!-- ══ CONTACT ══ -->
 <div class="page" id="pg-contact">
   <div class="shop-hd">
     <div class="container">
-      <span class="sec-tag">Bizimlə Əlaqə</span>
-      <h1 class="sec-title">Bize <em>Yazın</em></h1>
-      <p style="margin-top:1rem;color:var(--warm-gray);font-size:.85rem">24 saat ərzində cavab veririk</p>
+      <span class="sec-tag" data-i18n="contact_tag"></span>
+      <h1 class="sec-title" data-i18n="contact_title"></h1>
+      <p style="margin-top:1rem;color:var(--warm-gray);font-size:.85rem" data-i18n="contact_sub"></p>
     </div>
   </div>
   <section>
     <div class="container">
       <div class="contact-grid">
         <div>
-          <h2 style="font-family:var(--font-d);font-size:2.4rem;font-weight:400;margin-bottom:1rem">Mağazalarımızı Ziyarət Edin</h2>
-          <p style="font-size:.88rem;color:var(--warm-gray);line-height:1.9;margin-bottom:2rem;font-weight:300">Sualınız, sifarişiniz və ya Jumla dünyasını kəşf etmək istəyiniz varsa — sizi gözləyirik.</p>
-          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-lbl">Lokasiyalar</div><div class="ci-val">📍 Passage 1901<br>📍 Ganjlik Mall<br>📍 Crescent Mall</div></div></div>
-          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.72a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></div><div><div class="ci-lbl">Telefon</div><div class="ci-val">+994 50 XXX XX XX</div></div></div>
-          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-lbl">Email</div><div class="ci-val">hello@thejumla.az</div></div></div>
+          <h2 style="font-family:var(--font-d);font-size:2.2rem;font-weight:400;margin-bottom:1rem" data-i18n="visit_title"></h2>
+          <p style="font-size:.88rem;color:var(--warm-gray);line-height:1.9;margin-bottom:2rem;font-weight:300" data-i18n="visit_sub"></p>
+          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="loc_label"></div><div class="ci-val">📍 Passage 1901<br>📍 Ganjlik Mall<br>📍 Crescent Mall</div></div></div>
+          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.72a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="phone_label"></div><div class="ci-val">+994 50 XXX XX XX</div></div></div>
+          <div class="ci"><div class="ci-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="ci-lbl">Email</div><div class="ci-val">hello@thejumla.az</div></div></div>
           <div style="margin-top:1.5rem">
-            <div class="det-lbl" style="margin-bottom:.8rem">İş Saatları</div>
+            <div class="det-lbl" style="margin-bottom:.8rem" data-i18n="hours_label"></div>
             <div class="hours-grid">
-              <div class="hrow"><div class="hday">B.ertəsi – Cümə</div><div>10:00 – 21:00</div></div>
-              <div class="hrow"><div class="hday">Şənbə</div><div>10:00 – 22:00</div></div>
-              <div class="hrow"><div class="hday">Bazar</div><div>11:00 – 21:00</div></div>
-              <div class="hrow"><div class="hday">Bayram günləri</div><div>Bağlıdır</div></div>
+              <div class="hrow"><div class="hday" data-i18n="h_weekday"></div><div>10:00 – 21:00</div></div>
+              <div class="hrow"><div class="hday" data-i18n="h_sat"></div><div>10:00 – 22:00</div></div>
+              <div class="hrow"><div class="hday" data-i18n="h_sun"></div><div>11:00 – 21:00</div></div>
+              <div class="hrow"><div class="hday" data-i18n="h_hol"></div><div data-i18n="h_closed"></div></div>
             </div>
           </div>
-          <!-- SIMPLE MONO SOCIAL BUTTONS -->
           <div class="social-row">
             <button class="soc-btn" onclick="window.open('https://www.instagram.com/thejumla/','_blank')">
               <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              Instagram
+              @thejumla
             </button>
-            <button class="soc-btn" onclick="toast('TikTok: @thejumla')">
+            <button class="soc-btn" onclick="toast('TikTok')">
               <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
               TikTok
             </button>
-            <button class="soc-btn" onclick="toast('WhatsApp ilə əlaqə')">
+            <button class="soc-btn" onclick="toast('WhatsApp')">
               <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               WhatsApp
             </button>
           </div>
-          <div class="map-box">
-            <svg width="28" height="28" fill="none" stroke="var(--gold)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div style="font-size:.78rem;color:var(--warm-gray)">Passage 1901 · Ganjlik Mall · Crescent Mall</div>
-            <button class="btn-primary" style="padding:.45rem 1.2rem;font-size:.68rem;margin-top:.3rem" onclick="toast('Xəritə açılır...')">Xəritədə Göstər</button>
-          </div>
         </div>
         <div>
-          <h2 style="font-family:var(--font-d);font-size:2rem;font-weight:400;margin-bottom:.5rem">Bizə Mesaj Göndərin</h2>
-          <p style="font-size:.85rem;color:var(--warm-gray);margin-bottom:2rem;font-weight:300">Formu doldurun, 24 saat ərzində cavab verəcəyik.</p>
+          <h2 style="font-family:var(--font-d);font-size:2rem;font-weight:400;margin-bottom:.5rem" data-i18n="form_title"></h2>
+          <p style="font-size:.85rem;color:var(--warm-gray);margin-bottom:2rem;font-weight:300" data-i18n="form_sub"></p>
           <form onsubmit="ctSub(event)">
             <div class="frow2">
-              <div class="fg"><label>Ad</label><input type="text" placeholder="Adınız"></div>
-              <div class="fg"><label>Soyad</label><input type="text" placeholder="Soyadınız"></div>
+              <div class="fg"><label data-i18n="form_fname"></label><input type="text" id="ph-fname"></div>
+              <div class="fg"><label data-i18n="form_lname"></label><input type="text" id="ph-lname"></div>
             </div>
-            <div class="fg"><label>E-poçt</label><input type="email" placeholder="email@example.com"></div>
-            <div class="fg"><label>Telefon</label><input type="tel" placeholder="+994 50 XXX XX XX"></div>
-            <div class="fg"><label>Mövzu</label><select><option value="">Mövzu seçin</option><option>Sifariş Sorğusu</option><option>Məhsul Sualı</option><option>İade &amp; Dəyişdirmə</option><option>Topdan Satış</option><option>Digər</option></select></div>
-            <div class="fg"><label>Mesaj</label><textarea placeholder="Sizə necə kömək edə bilərik?..."></textarea></div>
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem">Göndər <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+            <div class="fg"><label>Email</label><input type="email" placeholder="email@example.com"></div>
+            <div class="fg"><label data-i18n="form_phone"></label><input type="tel" placeholder="+994 50 XXX XX XX"></div>
+            <div class="fg"><label data-i18n="form_subject"></label>
+              <select id="form-subject-sel"></select>
+            </div>
+            <div class="fg"><label data-i18n="form_msg"></label><textarea id="ph-msg"></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem" data-i18n="form_send"></button>
           </form>
         </div>
       </div>
     </div>
   </section>
-</div>
+</div><!-- /contact -->
 
-<!-- FOOTER — compact, simple -->
+<!-- ══ FOOTER — minimal: brand + links only ══ -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-
-      <!-- Brand -->
       <div>
         <div class="f-logo">Jumla<span>.</span></div>
         <div class="f-slogan">Sonsuz sevgi, bir tək Cümlə ✨</div>
         <p class="f-desc">Passage 1901 · Ganjlik Mall · Crescent Mall</p>
         <div class="f-soc">
-          <button class="f-soc-btn" onclick="window.open('https://www.instagram.com/thejumla/','_blank')" title="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </button>
-          <button class="f-soc-btn" title="TikTok">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          </button>
-          <button class="f-soc-btn" title="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          </button>
-          <button class="f-soc-btn" title="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </button>
+          <button class="f-soc-btn" onclick="window.open('https://www.instagram.com/thejumla/','_blank')" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></button>
+          <button class="f-soc-btn" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></button>
+          <button class="f-soc-btn" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></button>
+          <button class="f-soc-btn" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
         </div>
       </div>
-
-      <!-- Nav -->
       <div>
-        <div class="f-col-title">Keçidlər</div>
+        <div class="f-col-title" data-i18n="f_links"></div>
         <ul class="f-links">
-          <li><a onclick="goPage('home')">Ana Səhifə</a></li>
-          <li><a onclick="goPage('about')">Haqqımızda</a></li>
-          <li><a onclick="goPage('products')">Mağaza</a></li>
-          <li><a onclick="goPage('contact')">Əlaqə</a></li>
+          <li><a onclick="goPage('home')"    data-i18n="nav_home"></a></li>
+          <li><a onclick="goPage('about')"   data-i18n="nav_about"></a></li>
+          <li><a onclick="goPage('products')" data-i18n="nav_shop"></a></li>
+          <li><a onclick="goPage('contact')" data-i18n="nav_contact"></a></li>
         </ul>
       </div>
-
-      <!-- Collections -->
-      <div>
-        <div class="f-col-title">Kolleksiyalar</div>
-        <ul class="f-links">
-          <li><a onclick="goPage('products')">Sırğalar</a></li>
-          <li><a onclick="goPage('products')">Boyunbağılar</a></li>
-          <li><a onclick="goPage('products')">Üzüklər</a></li>
-          <li><a onclick="goPage('products')">Qolbaqlar</a></li>
-          <li><a onclick="goPage('products')">Saatlar</a></li>
-          <li><a onclick="goPage('products')">Çantalar</a></li>
-          <li><a onclick="goPage('products')">Eynəklər</a></li>
-        </ul>
-      </div>
-
     </div>
     <div class="f-bottom">
       <div class="f-copy">© 2025 Jumla Accessories. Bakı, Azərbaycan.</div>
